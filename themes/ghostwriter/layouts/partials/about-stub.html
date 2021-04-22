@@ -1,0 +1,25 @@
+<li class="about-stub">
+    {{ partial "star-svg-template.html" . }}
+    <a href="{{ .Permalink }}">
+        <div class="about-stub-title">{{ .Title }}</div>
+    </a>
+    {{ .Scratch.Set "rating" .Params.score }}
+    <div class="rating-line">
+        <div class="stars-and-text">
+            {{ partialCached "stars-svg.html" . .Title }}<div class="stars-text">{{ .Params.score }}</div>
+        </div>
+        <div class="date">{{ .Date.Format "January 2, 2006" }}</div>
+    </div>
+    {{ if .Description }}
+        <em class="about-stub-description">"{{ .Description }}"</em>
+    {{ end }}
+    <div class="about-stub-author-wrapper">
+        {{ if .Params.Author }}
+        <div class="about-stub-author">{{ .Params.Author }}</div>
+        {{ end }}
+        {{ if .Params.Company }}
+        <div class="about-stub-company">{{ if .Params.Author }}— {{ end }}{{ .Params.Company }}</div>
+        {{ end }}
+    </div>
+
+</li>

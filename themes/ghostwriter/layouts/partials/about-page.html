@@ -1,0 +1,56 @@
+{{ partial "header.html" . }}
+
+<div id="about-page" class="container" itemscope="" itemtype="https://schema.org/Blog">
+    {{ partial "intro.html" . }}
+<!--    <section>-->
+<!--        <h1>About Igor Loskutov</h1>-->
+<!--        <p>Fullstack Web Developer</p>-->
+<!--    </section>-->
+
+    <h2>Skills</h2>
+    <ul>
+        <li>Backend, Frontend, Infrastructure, Management/Communications, (Functional, Static Typed) Clean Code</li>
+        <li>*technologies change fast, but fundamental knowledge and intuition stay forever*</li>
+    </ul>
+
+    <h2>Commendations</h2>
+
+    <section>
+        <ol class="post-list">
+            {{ $pag := .Paginate (where .Site.RegularPages "Type" "in" "commendations") }}
+            {{ range $pag.Pages }}
+            {{ partial "about-stub.html" . }}
+            {{ end }}
+        </ol>
+    </section>
+
+    <h2>Current Project</h2>
+
+    <ul>
+        <li>
+            <a href="https://app.fiddlequest.com/">FiddleQuest LLC</a> — Web App, Mobile App, Html5 Game backend
+        </li>
+    </ul>
+
+    <h2>Older Jobs</h2>
+    <h4>*Company - company profile - what I was doing*</h4>
+
+    <ul>
+        <li><a href="https://www.neoflex.ru">Neoflex</a> - System integrator - various management and financial reporting with ETL; Java/OracleSQL based stack for business process automation</li>
+        <li><a href="https://megaplan.ru">Megaplan (RU)</a> - Basecamp-like company - Jira-based helpdesk system (currently Atlassian got [this](https://www.atlassian.com/software/jira/service-desk) but there was no such thing before), various Jira-based (Java+JS) management reports</li>
+        <li><a href="https://showmojo.com">Showmojo (US)</a> - Real estate service - Features for Rails web application (property info parting/importing, Email/SMS notifications, administration interface)</li>
+        <li><a href="https://www.businesswire.com/news/home/20140729005981/en/Yarnee-the-Next-Evolution-in-Social-Media-Sharing-Apps-Available-Now/">Danke Games (US/DE)</a> - Digital stories collecting/sharing startup - I created Python/Pyramid API, Node.js/Socket.js/Angular administration/monitoring interface, AngularJS web application including layout, company landing website, Varnish-based routing/caching, [EBS](http://aws.amazon.com/elasticbeanstalk/) autoscaled application cluster with centralized log storage (logstash/elasticsearch) and much more!</li>
+        <li><a href="https://www.crunchbase.com/organization/the-hire-street">TheHireStreet (UK)</a> - UK Item Rental/Catering - Java backend, Typescript/React frontend</li>
+        <li><a href="https://medium.com/token-store/here-lies-token-store-one-of-the-webs-first-trustless-exchange-companies-d6eb661b60c4">TokenStore</a> - Decentralised ERC20 Token Exchange - Market Charts, Browser <-> Ethereum contract integration</li>
+    </ul>
+
+    <h2>Older Regalia</h2>
+
+    <ul>
+        <li>Oracle Certified Professional, Java SE programmer, 2011</li>
+        <li>Oracle Certified Expert, Java EE 6 Enterprise JavaBeans Developer, 2011</li>
+        <li>Zend Certified Engineer PHP 5.3, 2011</li>
+    </ul>
+</div>
+
+{{ partial "footer.html" . }}

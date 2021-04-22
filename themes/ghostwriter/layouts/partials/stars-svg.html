@@ -1,0 +1,9 @@
+{{ $widths := dict "5.00" 79 "4.85" 74 }}
+<div class="stars-wrapper">
+    <div class="stars stars-foreground" style="width: {{ index $widths (.Scratch.Get "rating") }}px">
+        {{ partial "stars-five-stars-svg.html" . }}
+    </div>
+    <div class="stars stars-background">
+        {{ partial "stars-five-stars-svg.html" . }}
+    </div>
+</div>
