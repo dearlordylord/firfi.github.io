@@ -1,0 +1,29 @@
+.about-stub-author-wrapper {
+  margin-top: 13px;
+  text-align: right;
+}
+
+.about-stub-author {
+  display: inline-block;
+}
+
+.about-stub-company {
+  display: inline-block;
+}
+
+.about-stub {
+  padding-bottom: 19px;
+}
+
+.about-stub-title {
+  font-size: 15px;
+  font-weight: 500;
+  color: $upwork-color;
+  margin-bottom: 9px;
+}
+
+.about-stub-description {
+  color: rgb(34, 34, 34);
+  font-size: 13px;
+  font-style: italic;;
+}

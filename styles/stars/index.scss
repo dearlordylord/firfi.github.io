@@ -1,0 +1,109 @@
+.rating-line {
+  .date {
+    display: inline-block;
+    color: rgb(101, 101, 101);
+    font-size: 12px;
+    vertical-align: bottom;
+    margin-bottom: 2px;
+  }
+}
+
+.stars-and-text {
+  vertical-align: middle;
+  display: inline-block;
+}
+
+.stars-text {
+  color: rgb(34, 34, 34);
+  font-size: 13px;
+  font-weight: 700;
+  display: inline-block;
+}
+
+.stars-wrapper {
+  height: 16px;
+  display: inline-block;
+  width: 87px;
+  position: relative;
+}
+
+.stars {
+  position: absolute;
+  white-space: nowrap;
+  line-height: 0;
+  top: 4px;
+  &.stars-foreground {
+    overflow: hidden;
+    z-index: 1;
+    .star {
+      fill: $upwork-color;
+      stroke: $upwork-color;
+      stroke-linejoin: round;
+    }
+  }
+  .star {
+    width: 12px;
+    height: 12px;
+
+  }
+}
+
+.up-rating-editable {
+  --star-padding: 6px
+}
+
+.up-rating-editable svg {
+  padding-top: 10px;
+  padding-bottom: 10px
+}
+
+.up-rating {
+  position: relative;
+  display: inline-block;
+  white-space: nowrap;
+  line-height: 0
+}
+
+.up-rating svg {
+  box-sizing: content-box;
+  width: 18px;
+  width: var(--star-size, 18px);
+  height: 18px;
+  height: var(--star-size, 18px);
+  padding-right: 1px;
+  padding-right: var(--star-padding, 1px)
+}
+
+.up-rating svg:not(:first-child) {
+  padding-left: 1px;
+  padding-left: var(--star-padding, 1px)
+}
+
+.up-rating svg:focus {
+  outline-offset: -2px;
+  outline-color: var(--brand-primary)
+}
+
+.up-rating use {
+  fill: var(--bg-4);
+  fill: var(--star-color, var(--bg-4));
+  stroke: var(--bg-4);
+  stroke: var(--star-color, var(--bg-4));
+  stroke-linejoin: round
+}
+
+.up-rating .up-rating-foreground {
+  --star-color: var(--brand-primary);
+  position: absolute;
+  overflow: hidden
+}
+
+@media (forced-colors: active) {
+  .up-rating .up-rating-foreground {
+    --star-color: var(--bg-hc-selected)
+  }
+}
+
+.up-rating-sm {
+  --star-size: 12px
+}
