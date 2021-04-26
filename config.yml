@@ -75,5 +75,8 @@ menu:
     - name: About
       url: /
       weight: 1
+    - name: Resume
+      url: /resume.pdf
+      weight: 2
 
 
